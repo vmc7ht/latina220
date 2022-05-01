@@ -1,0 +1,628 @@
+[
+  {
+    "model": "routes.Route",
+    "pk": 1,
+    "fields": {
+      "route_number": "5",
+      "route_zone": "20109",
+      "route_ns": "2019-07-29",
+      "route_carrier_last_name": "Vacant",
+      "route_carrier_first_name": "",
+      "T6_id" : "2",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "Hernandez"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 2,
+    "fields": {
+      "route_number": "12",
+      "route_zone": "20109",
+      "route_ns": "2019-06-19",
+      "route_carrier_last_name": "Howell",
+      "route_carrier_first_name": "",
+      "T6_id" : "4",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 3,
+    "fields": {
+      "route_number": "14",
+      "route_zone": "20109",
+      "route_ns": "2019-06-18",
+      "route_carrier_last_name": "Moore",
+      "route_carrier_first_name": "",
+      "T6_id" : "7",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Parker"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 4,
+    "fields": {
+      "route_number": "15",
+      "route_zone": "20109",
+      "route_ns": "2019-06-17",
+      "route_carrier_last_name": "Ngo",
+      "route_carrier_first_name": "",
+      "T6_id" : "4",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 5,
+    "fields": {
+      "route_number": "17",
+      "route_zone": "20109",
+      "route_ns": "2019-06-15",
+      "route_carrier_last_name": "Rivera",
+      "route_carrier_first_name": "",
+      "T6_id" : "2",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "Hernandez"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 6,
+    "fields": {
+      "route_number": "18",
+      "route_zone": "20109",
+      "route_ns": "2019-06-01",
+      "route_carrier_last_name": "Vacant",
+      "route_carrier_first_name": "",
+      "T6_carrier_zone" : "",
+      "T6_carrier_last_name" : ""
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 7,
+    "fields": {
+      "route_number": "23",
+      "route_zone": "20109",
+      "route_ns": "2019-06-17",
+      "route_carrier_last_name": "Davis",
+      "route_carrier_first_name": "",
+      "T6_id" : "1",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 8,
+    "fields": {
+      "route_number": "27",
+      "route_zone": "20109",
+      "route_ns": "2019-06-20",
+      "route_carrier_last_name": "Chun",
+      "route_carrier_first_name": "",
+      "T6_id" : "4",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 9,
+    "fields": {
+      "route_number": "28",
+      "route_zone": "20109",
+      "route_ns": "2019-06-15",
+      "route_carrier_last_name": "Johnson",
+      "route_carrier_first_name": "",
+      "T6_id" : "4",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 10,
+    "fields": {
+      "route_number": "30",
+      "route_zone": "20109",
+      "route_ns": "2019-06-18",
+      "route_carrier_last_name": "Vacant",
+      "route_carrier_first_name": "",
+      "T6_id" : "3",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 11,
+    "fields": {
+      "route_number": "32",
+      "route_zone": "20109",
+      "route_ns": "2019-06-21",
+      "route_carrier_last_name": "Khan",
+      "route_carrier_first_name": "",
+      "T6_id" : "1",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 12,
+    "fields": {
+      "route_number": "34",
+      "route_zone": "20109",
+      "route_ns": "2019-06-15",
+      "route_carrier_last_name": "Jones",
+      "route_carrier_first_name": "",
+      "T6_id" : "3",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 13,
+    "fields": {
+      "route_number": "38",
+      "route_zone": "20109",
+      "route_ns": "2019-06-20",
+      "route_carrier_last_name": "Lowe",
+      "route_carrier_first_name": "",
+      "T6_id" : "1",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 14,
+    "fields": {
+      "route_number": "40",
+      "route_zone": "20109",
+      "route_ns": "2019-06-17",
+      "route_carrier_last_name": "Soriano",
+      "route_carrier_first_name": "",
+      "T6_id" : "3",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 15,
+    "fields": {
+      "route_number": "44",
+      "route_zone": "20109",
+      "route_ns": "2019-06-18",
+      "route_carrier_last_name": "Wu",
+      "route_carrier_first_name": "",
+      "T6_id" : "2",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "Hernandez"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 16,
+    "fields": {
+      "route_number": "45",
+      "route_zone": "20109",
+      "route_ns": "2019-06-21",
+      "route_carrier_last_name": "Beardsley",
+      "route_carrier_first_name": "",
+      "T6_id" : "2",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "Hernandez"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 17,
+    "fields": {
+      "route_number": "48",
+      "route_zone": "20109",
+      "route_ns": "2019-06-15",
+      "route_carrier_last_name": "Markey",
+      "route_carrier_first_name": "",
+      "T6_id" : "1",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 18,
+    "fields": {
+      "route_number": "51",
+      "route_zone": "20109",
+      "route_ns": "2019-06-19",
+      "route_carrier_last_name": "Payne",
+      "route_carrier_first_name": "",
+      "T6_id" : "1",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 19,
+    "fields": {
+      "route_number": "52",
+      "route_zone": "20109",
+      "route_ns": "2019-06-19",
+      "route_carrier_last_name": "Gill",
+      "route_carrier_first_name": "",
+      "T6_id" : "2",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "Hernandez"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 20,
+    "fields": {
+      "route_number": "2",
+      "route_zone": "20110",
+      "route_ns": "2019-07-05",
+      "route_carrier_last_name": "McEachin",
+      "route_carrier_first_name": "",
+      "T6_id" : "6",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Crossley"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 21,
+    "fields": {
+      "route_number": "3",
+      "route_zone": "20110",
+      "route_ns": "2019-06-19",
+      "route_carrier_last_name": "Morales",
+      "route_carrier_first_name": "",
+      "T6_id" : "7",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Parker"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 22,
+    "fields": {
+      "route_number": "6",
+      "route_zone": "20110",
+      "route_ns": "2019-06-20",
+      "route_carrier_last_name": "Chandler",
+      "route_carrier_first_name": "",
+      "T6_id" : "6",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Crossley"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 23,
+    "fields": {
+      "route_number": "8",
+      "route_zone": "20110",
+      "route_ns": "2019-06-21",
+      "route_carrier_last_name": "Ausberry",
+      "route_carrier_first_name": "",
+      "T6_id" : "5",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Obi"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 24,
+    "fields": {
+      "route_number": "9",
+      "route_zone": "20110",
+      "route_ns": "2019-06-21",
+      "route_carrier_last_name": "Benson",
+      "route_carrier_first_name": "",
+      "T6_id" : "7",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Parker"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 25,
+    "fields": {
+      "route_number": "11",
+      "route_zone": "20110",
+      "route_ns": "2019-06-18",
+      "route_carrier_last_name": "Watson",
+      "route_carrier_first_name": "",
+      "T6_id" : "4",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 26,
+    "fields": {
+      "route_number": "19",
+      "route_zone": "20110",
+      "route_ns": "2019-06-20",
+      "route_carrier_last_name": "Kwan",
+      "route_carrier_first_name": "",
+      "T6_id" : "7",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Parker"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 27,
+    "fields": {
+      "route_number": "21",
+      "route_zone": "20110",
+      "route_ns": "2019-06-17",
+      "route_carrier_last_name": "Radford",
+      "route_carrier_first_name": "",
+      "T6_id" : "8",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Mcdougal"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 28,
+    "fields": {
+      "route_number": "24",
+      "route_zone": "20110",
+      "route_ns": "2019-06-19",
+      "route_carrier_last_name": "Fitzgerald",
+      "route_carrier_first_name": "",
+      "T6_id" : "3",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 29,
+    "fields": {
+      "route_number": "25",
+      "route_zone": "20110",
+      "route_ns": "2019-06-18",
+      "route_carrier_last_name": "North",
+      "route_carrier_first_name": "",
+      "T6_id" : "6",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Crossley"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 30,
+    "fields": {
+      "route_number": "29",
+      "route_zone": "20110",
+      "route_ns": "2019-06-18",
+      "route_carrier_last_name": "King",
+      "route_carrier_first_name": "",
+      "T6_id" : "8",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Mcdougal"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 31,
+    "fields": {
+      "route_number": "31",
+      "route_zone": "20110",
+      "route_ns": "2019-06-20",
+      "route_carrier_last_name": "Bedard",
+      "route_carrier_first_name": "",
+      "T6_id" : "8",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Mcdougal"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 32,
+    "fields": {
+      "route_number": "33",
+      "route_zone": "20110",
+      "route_ns": "2019-06-15",
+      "route_carrier_last_name": "Weber",
+      "route_carrier_first_name": "",
+      "T6_id" : "8",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Mcdougal"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 33,
+    "fields": {
+      "route_number": "35",
+      "route_zone": "20110",
+      "route_ns": "2019-06-21",
+      "route_carrier_last_name": "Cortes",
+      "route_carrier_first_name": "",
+      "T6_id" : "6",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Crossley"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 34,
+    "fields": {
+      "route_number": "37",
+      "route_zone": "20110",
+      "route_ns": "2019-06-20",
+      "route_carrier_last_name": "Singh",
+      "route_carrier_first_name": "",
+      "T6_carrier_zone" : "",
+      "T6_carrier_last_name" : ""
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 35,
+    "fields": {
+      "route_number": "39",
+      "route_zone": "20110",
+      "route_ns": "2019-06-18",
+      "route_carrier_last_name": "Kumar",
+      "route_carrier_first_name": "",
+      "T6_id" : "5",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Obi"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 36,
+    "fields": {
+      "route_number": "41",
+      "route_zone": "20110",
+      "route_ns": "2019-06-17",
+      "route_carrier_last_name": "Vacant",
+      "route_carrier_first_name": "",
+      "T6_id" : "7",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Parker"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 37,
+    "fields": {
+      "route_number": "43",
+      "route_zone": "20110",
+      "route_ns": "2019-06-20",
+      "route_carrier_last_name": "Acherkouk",
+      "route_carrier_first_name": "",
+      "T6_id" : "5",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Obi"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 38,
+    "fields": {
+      "route_number": "46",
+      "route_zone": "20110",
+      "route_ns": "2019-06-17",
+      "route_carrier_last_name": "Cook",
+      "route_carrier_first_name": "",
+      "T6_id" : "5",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Obi"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 39,
+    "fields": {
+      "route_number": "47",
+      "route_zone": "20110",
+      "route_ns": "2019-06-21",
+      "route_carrier_last_name": "Miranda",
+      "route_carrier_first_name": "",
+      "T6_id" : "8",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Mcdougal"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 40,
+    "fields": {
+      "route_number": "49",
+      "route_zone": "20110",
+      "route_ns": "2019-06-15",
+      "route_carrier_last_name": "Tshabola",
+      "route_carrier_first_name": "",
+      "T6_id" : "5",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Obi"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 41,
+    "fields": {
+      "route_number": "53",
+      "route_zone": "20110",
+      "route_ns": "2019-06-17",
+      "route_carrier_last_name": "Vacent",
+      "route_carrier_first_name": "",
+      "T6_id" : "6",
+      "T6_carrier_zone" : "20110",
+      "T6_carrier_last_name" : "Crossley"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 42,
+    "fields": {
+      "route_number": "54",
+      "route_zone": "20110",
+      "route_ns": "2019-06-20",
+      "route_carrier_last_name": "Garrett",
+      "route_carrier_first_name": "",
+      "T6_id" : "3",
+      "T6_carrier_zone" : "20109",
+      "T6_carrier_last_name" : "VACENT"
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 43,
+    "fields": {
+      "route_number": "55",
+      "route_zone": "20110",
+      "route_ns": "2019-06-17",
+      "route_carrier_last_name": "Chavez",
+      "route_carrier_first_name": "",
+      "T6_carrier_zone" : "",
+      "T6_carrier_last_name" : ""
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 44,
+    "fields": {
+      "route_number": "59",
+      "route_zone": "20110",
+      "route_ns": "2019-06-15",
+      "route_carrier_last_name": "Amoah",
+      "route_carrier_first_name": "",
+      "T6_carrier_zone" : "",
+      "T6_carrier_last_name" : ""
+    }
+  },
+  {
+    "model": "routes.Route",
+    "pk": 45,
+    "fields": {
+      "route_number": "60",
+      "route_zone": "20110",
+      "route_ns": "2019-05-05",
+      "route_carrier_last_name": "Vacant",
+      "route_carrier_first_name": "",
+      "T6_carrier_zone" : "",
+      "T6_carrier_last_name" : ""
+    }
+  }
+]
+

@@ -1,0 +1,178 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<button onclick="employee_delete_button()">Delete Employees</button>
+<div class='row' style='margin-left:auto;margin-right:auto;width:600px'>
+  <div class='row' style='margin-top:1em;padding-right:50px'>
+    <form method="POST" enctype="multipart/form-data">
+    	{% csrf_token %}
+      <p>Route Number: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{form.route_number}}</p>
+      <p>Carrier Last Name: &nbsp &nbsp {{form.route_carrier_last_name}}</p>
+      <p>Route Zone &nbsp{{form.route_zone}}</p>
+      <p>Select NS for Route
+        	<select name="month" onchange="day_in_month()" id="month_selected">
+      		<option value="1">Jan</option>
+      		<option value="2">Feb</option>
+      		<option value="3">March</option>
+      		<option value="4">April</option>
+      		<option value="5">May</option>
+      		<option value="6">June</option>
+      		<option value="7">July</option>
+      		<option value="8">Aug</option>
+      		<option value="9">Sept</option>
+      		<option value="10">Oct</option>
+      		<option value="11">Nov</option>
+      		<option value="12">Dec</option>
+  		  </select>
+        	<select name="day" id="day_selected">
+      		<option value="1">1</option>
+      		<option value="2">2</option>
+      		<option value="3">3</option>
+      		<option value="4">4</option>
+      		<option value="5">5</option>
+      		<option value="6">6</option>
+      		<option value="7">7</option>
+      		<option value="8">8</option>
+      		<option value="9">9</option>
+      		<option value="10">10</option>
+      		<option value="11">11</option>
+      		<option value="12">12</option>
+      		<option value="13">13</option>
+      		<option value="14">14</option>
+      		<option value="15">15</option>
+      		<option value="16">16</option>
+      		<option value="17">17</option>
+      		<option value="18">18</option>
+      		<option value="19">19</option>
+      		<option value="20">20</option>
+      		<option value="21">21</option>
+      		<option value="22">22</option>
+      		<option value="23">23</option>
+      		<option value="24">24</option>
+      		<option value="25">25</option>
+      		<option value="26">26</option>
+      		<option value="27">27</option>
+      		<option value="28">28</option>
+      		<option id = "29" value="29">29</option>
+      		<option id = "30" value="30">30</option>
+      		<option id = "31" value="31">31</option>
+  		  </select>
+        <select name="year" onchange="day_in_month()" id="year_selected">
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+        </select>
+        No NS: <input type="checkbox" name="disable_ns" id="myCheck" value = "False" onclick="no_NS()">
+        <p id = "old_ns"></p>
+      </p>
+      <div><b>Fields marked with * are required.</b></div>
+      <input type="submit" class="btn btn-success" value="Save Employee">
+      <a class="btn btn-primary" href="javascript:void(0);" onclick="go_back_button();">Go Back </a>
+    </form>
+  </div>
+</div>
+<script >
+set_default_day()
+day_in_month()
+old_ns()
+
+function set_default_day(){
+	current_day = new Date()
+	current_year = parseInt(current_day.getFullYear());
+	current_month = parseInt(current_day.getMonth());
+	current_date = parseInt(current_day.getDate()-1);
+	default_year =  document.getElementById('year_selected');
+	default_month = document.getElementById('month_selected');
+	default_day = document.getElementById('day_selected');
+	year = [2017,2018,2019,2020,2021,2022,2023,2024]
+	index_year = year.indexOf(current_year);
+	default_year.selectedIndex = index_year;
+	default_month.selectedIndex = current_month;
+	default_day.selectedIndex = current_date;
+}
+
+function old_ns (){
+  if ({{form.route_ns.value}} == -1){
+    document.getElementById("myCheck").checked = true
+    document.getElementById("old_ns").innerHTML = "Old NS: &nbsp &nbsp No NS Selected" 
+    no_NS()
+  }
+  else{
+    var x = '{{form.route_ns.value}}'.split("-")
+    var months = ["dummy",'Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec']
+    year = x[0]
+    month = months[x[1]]
+    day = x[2]
+    years = ['2017','2018','2019','2020','2021','2022','2023','2024']
+    index_year = years.indexOf(year);
+    default_year.selectedIndex = index_year;
+    default_month.selectedIndex = x[1]-1;
+    default_day.selectedIndex = day-1;
+    document.getElementById("old_ns").innerHTML = "Old NS: &nbsp &nbsp " + month +" "+ day +", " + year
+
+  }
+}
+function day_in_month() {
+	month_selected = parseInt(document.getElementById("month_selected").value);
+	year_selected = parseInt(document.getElementById("year_selected").value);
+	var leapyear = (year_selected % 100 === 0) ? (year_selected % 400 === 0) : (year_selected % 4 === 0);
+	x = document.getElementById("29");
+	x.style.display = "block";
+	x = document.getElementById("30");
+	x.style.display = "block";
+	x = document.getElementById("31");
+	x.style.display = "block";
+	if ([4,6,9,11].includes(month_selected)){
+		x = document.getElementById("31");
+		x.style.display = "none";
+	}
+	if (month_selected == 2){
+		x = document.getElementById("29");
+		if(!(leapyear))x.style.display = "none";	
+		x = document.getElementById("30");
+		x.style.display = "none";
+		x = document.getElementById("31");
+		x.style.display = "none";
+	}
+}
+function no_NS(){
+  var checkBox = document.getElementById("myCheck");
+  if (checkBox.checked == true){
+    document.getElementById("day_selected").disabled = true;
+    document.getElementById("month_selected").disabled = true;
+    document.getElementById("year_selected").disabled = true;
+  }
+  if (checkBox.checked == false){
+    document.getElementById("day_selected").disabled = false;
+    document.getElementById("month_selected").disabled = false;
+    document.getElementById("year_selected").disabled = false;
+  }
+}
+
+function go_back_button(){
+  var url = document.URL.split("/");
+  var id = url[url.length - 3]
+  var name = url[url.length - 2]
+  var route = url[url.length - 1]
+  url = document.URL.replace("/"+id+"/"+name+"/"+route, '')
+  window.location = url;
+}
+
+function employee_delete_button(){
+  var url = document.URL.split("/");
+  var id = url[url.length - 3]
+  var name = url[url.length - 2]
+  var route = url[url.length - 1]
+  url = document.URL.replace("/employee_edit/"+id+"/"+name+"/"+route, '')
+  window.location = url+"/employee_delete"  
+}
+
+</script>
+{% endblock %}

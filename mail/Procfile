@@ -1,0 +1,3 @@
+web: gunicorn src.afterschool.wsgi
+release: python src/manage.py makemigrations
+release: python src/manage.py migrate

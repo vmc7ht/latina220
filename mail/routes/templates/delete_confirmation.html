@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<button onclick="employee_add_button()">Add Employees</button>
+<style>
+  th,td{
+      border: 1px solid;
+      text-align: center;  
+    }
+  tr:hover { 
+    background: red; 
+  }
+  table{
+      border: 1px solid;
+      border-collapse: separate;
+      border-spacing:35 35px;
+    }
+</style>
+<button onclick="go_back_button()" class="btn btn-cancel" >Go Back</button>
+<div class="row justify-content-center">
+  <form method="post">
+    {% csrf_token %}
+    <h1>Delete Employee? <span class="badge badge-secondary"></span></h1> 
+    <p id = "Employee_Info"></p>
+    <input type="submit" class="btn btn-danger" value="Delete Application" name = "User_Delete">
+    <a class="btn btn-primary" href="javascript:void(0);" onclick="go_back_button();">No, Don't Delete </a>
+  </form>
+</div>
+
+<script >
+fill_data()
+function fill_data(){
+  var url = document.URL.split("/");
+  var name = url[url.length - 2]
+  var route_number = url[url.length - 1]
+  document.getElementById("Employee_Info").innerHTML = "<b>Employee: </b>" + name + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Route: </b>" +route_number
+ }
+
+function go_back_button(){
+  var url = document.URL.split("/");
+  var id = url[url.length - 3]
+  var name = url[url.length - 2]
+  var route = url[url.length - 1]
+  url = document.URL.replace("/"+id+"/"+name+"/"+route, '')
+  window.location = url;
+}
+function employee_add_button(){
+  var url = document.URL.split("/");
+  var id = url[url.length - 3]
+  var name = url[url.length - 2]
+  var route = url[url.length - 1]
+  url = document.URL.replace("/employee_delete"+"/"+id+"/"+name+"/"+route, '')
+  window.location = url + "/employee_add";
+}
+</script>
+{% endblock %}

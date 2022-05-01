@@ -1,0 +1,88 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<button onclick="employee_add_button()">Add Employees</button>
+<button id = "20109" onclick="switch_zone_button(20109)">20109</button>
+<button id = "20110" onclick="switch_zone_button(20110)">20110</button>
+<style>
+  th,td{
+      border: 1px solid;
+      text-align: center;  
+    }
+  tr:hover { 
+    background: red; 
+  }
+  table{
+      border: 1px solid;
+      border-collapse: separate;
+      border-spacing:35 35px;
+    }
+</style>
+<div class='row' style='margin-left:auto;margin-right:auto;width:600px'>
+  <div class='row' style='margin-top:1em;padding-right:250px'>
+    <h1>Delete Employee <span class="badge badge-secondary"></span></h1>
+  </div>
+</div>
+<button onclick="go_back_button()" class="btn btn-cancel" >Go Back</button>
+<div class="row justify-content-center">
+    <table id = "table">
+      <tr> 
+        <th>Route</th>
+        <th>Carrier</th>
+      </tr>
+      {% for routes in routes %}
+        <tr> 
+          <td>
+            <a href="javascript:void(0);" onclick="employee_del_link(`{{routes.route_id}}`,`{{routes.route_carrier_last_name}}`,`{{routes.route_number}}`);">{{routes.route_carrier_last_name}}</a>
+          </td>
+          <td>
+            <a href="javascript:void(0);" onclick="employee_del_link(`{{routes.route_id}}`,`{{routes.route_carrier_last_name}}`,`{{routes.route_number}}`);">{{routes.route_carrier_last_name}}</a>
+          </td>
+        </tr>   
+      {% endfor %}
+      {% for t6 in T6 %}
+        <tr> 
+          <td>
+            <a href="javascript:void(0);" onclick="t6_del_t6_link(`{{t6.9}}`,`{{t6.7}}`)">{{t6.10}}</a>
+          </td>
+          <td>
+            <a href="javascript:void(0);" onclick="t6_del_t6_link(`{{t6.9}}`,`{{t6.7}}`);">{{t6.7}}</a>
+          </td>
+      {% endfor %}
+    </table>
+</div>
+<script >
+disable_zone()
+
+function t6_del_t6_link(t6id,name){
+  var url = document.URL
+  window.location = url +"/t6/"+name+"/"+t6id
+}
+
+function employee_del_link(id,name,route){
+  var url = document.URL
+  window.location = url +"/"+id+"/"+name +"/"+route
+}
+
+function go_back_button(){
+  var url = document.URL.replace("/employee_delete", '')
+  window.location = url;
+}
+function employee_add_button(){
+  var url = document.URL.replace("/employee_delete", '')
+  window.location = url + "/employee_add";
+}
+function switch_zone_button(new_zone){
+  var url = document.URL.split("/");
+  var week_num = parseInt(url[url.length - 2])
+  window.location = "/schedule/weekly/"+new_zone+"/"+week_num+"/employee_delete";  
+}
+function disable_zone(){
+  var url = document.URL.split("/");
+  var zone = url[url.length - 2]
+  if (zone=="20109") document.getElementById("20109").disabled = true;
+  if (zone=="20110") document.getElementById("20110").disabled = true;
+}
+</script>
+{% endblock %}

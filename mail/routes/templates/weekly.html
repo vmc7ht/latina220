@@ -1,0 +1,206 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<input type="hidden" name="Holiday" value="{{holiday_this_week}}">
+<input type="hidden" name="regular_size" value="{{regular_size}}">
+<button onclick="left_button()">Left</button>
+<button onclick="right_button()">Right</button>
+<button onclick="employee_add_button()">Add Employees</button>
+<button onclick="employee_edit_button()">Edit Employees</button>
+<button onclick="employee_delete_button()">Delete Employees</button>
+<button id = "20109" onclick="switch_zone_button(20109)">20109</button>
+<button id = "20110" onclick="switch_zone_button(20110)">20110</button>
+<style>
+	th,td{
+    	border: 1px solid;
+    	text-align: center;  
+    }
+ 	table{
+    	border: 1px solid;
+    	border-collapse: separate;
+    	border-spacing:35 35px;
+    }
+</style>
+<div class="row justify-content-center">
+		<table id = "table">
+ 	  		<tr>
+				<th style="border-style:hidden hidden hidden hidden;"></th>
+		  		<th style="border-style:hidden hidden hidden hidden;"></th>
+		  		<th>Saturday</th>
+		  		<th>Sunday</th>
+				<th>Monday</th>
+		  		<th>Tuesday</th>
+		  		<th>Wednesday</th>
+		  		<th>Thursday</th>
+		  		<th>Friday</th>
+	  		</tr>
+	  		<tr> 
+				<th>Route</th>
+				<th>Carrier</th>
+			  	<th id = "Saturday">{{partial_date_week.0}}</th>
+			  	<th id = "Sunday">{{partial_date_week.1}}</th>
+			  	<th id = "Monday">{{partial_date_week.2}}</th>
+			  	<th id = "Tuesday">{{partial_date_week.3}}</th>
+			  	<th id = "Wednesday">{{partial_date_week.4}}</th>
+			  	<th id = "Thursday">{{partial_date_week.5}}</th>
+			  	<th id = "Friday">{{partial_date_week.6}}</th>
+			</tr>
+			{% for routes in routes %}
+		  		<tr>
+				  	<th contenteditable="true" onblur="update_route_number(`{{routes.8}}`,`{{forloop.counter0}}`)">{{routes.9}}</th>
+				  	<th contenteditable="true" onblur="update_name(`{{routes.8}}`,`{{forloop.counter0}}`)">{{routes.7}}</th>
+				  	<th contenteditable="true" onblur="update_override(`{{routes.8}}`,`{{forloop.counter0}}`,2,`{{full_date_week.0}}`)">{{routes.5}}</th>
+				  	<th contenteditable="true" onblur="update_override(`{{routes.8}}`,`{{forloop.counter0}}`,3,`{{full_date_week.1}}`)">{{routes.6}}</th>
+				  	<th contenteditable="true" onblur="update_override(`{{routes.8}}`,`{{forloop.counter0}}`,4,`{{full_date_week.2}}`)">{{routes.0}}</th>
+				  	<th contenteditable="true" onblur="update_override(`{{routes.8}}`,`{{forloop.counter0}}`,5,`{{full_date_week.3}}`)">{{routes.1}}</th>
+				  	<th contenteditable="true" onblur="update_override(`{{routes.8}}`,`{{forloop.counter0}}`,6,`{{full_date_week.4}}`)">{{routes.2}}</th>
+				  	<th contenteditable="true" onblur="update_override(`{{routes.8}}`,`{{forloop.counter0}}`,7,`{{full_date_week.5}}`)">{{routes.3}}</th>
+				  	<th contenteditable="true" onblur="update_override(`{{routes.8}}`,`{{forloop.counter0}}`,8,`{{full_date_week.6}}`)">{{routes.4}}</th>
+				</tr>		
+			{% endfor %}
+			<tr><th>_</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+			{% for t6 in T6 %}
+		  		<tr> 
+				  	<th contenteditable="true" onblur="update_t6_type(`{{t6.9}}`,`{{forloop.counter0}}`)">{{t6.10}}</th>
+				  	<th contenteditable="true" onblur="update_t6_name(`{{t6.9}}`,`{{forloop.counter0}}`)">{{t6.7}}</th>
+				  	<th contenteditable="true" onblur="update_t6_override(`{{t6.8}}`,`{{forloop.counter0}}`,2,`{{full_date_week.0}}`)">{{t6.5}}</th>
+				  	<th contenteditable="true" onblur="update_t6_override(`{{t6.8}}`,`{{forloop.counter0}}`,3,`{{full_date_week.1}}`)">{{t6.6}}</th>
+				  	<th contenteditable="true" onblur="update_t6_override(`{{t6.8}}`,`{{forloop.counter0}}`,4,`{{full_date_week.2}}`)">{{t6.0}}</th>
+				  	<th contenteditable="true" onblur="update_t6_override(`{{t6.8}}`,`{{forloop.counter0}}`,5,`{{full_date_week.3}}`)">{{t6.1}}</th>
+				  	<th contenteditable="true" onblur="update_t6_override(`{{t6.8}}`,`{{forloop.counter0}}`,6,`{{full_date_week.4}}`)">{{t6.2}}</th>
+				  	<th contenteditable="true" onblur="update_t6_override(`{{t6.8}}`,`{{forloop.counter0}}`,7,`{{full_date_week.5}}`)">{{t6.3}}</th>
+				  	<th contenteditable="true" onblur="update_t6_override(`{{t6.8}}`,`{{forloop.counter0}}`,8,`{{full_date_week.6}}`)">{{t6.4}}</th>
+				</tr>
+			{% endfor %}
+		</table>
+</div>
+
+
+<script>
+function update_route_number(route_id,row){
+	var route_num = table.rows[2+parseInt(row)].cells[0].innerHTML
+    $.ajax({
+    	url: '{% url "update_route_number" %}',
+        data: {
+       		'route_id' : route_id,
+        	'route_num': route_num
+        },
+        dataType: 'json',
+   	});
+}
+function update_name(route_id,row){
+	var name = table.rows[2+parseInt(row)].cells[1].innerHTML
+    $.ajax({
+    	url: '{% url "update_name" %}',
+        data: {
+       		'route_id' : route_id,
+        	'name': name
+        },
+        dataType: 'json',
+   	});
+}
+
+function update_override(route_id,row,col,date){
+	var override = table.rows[2+parseInt(row)].cells[parseInt(col)].innerHTML
+    $.ajax({
+    	url: '{% url "update_override" %}',
+        data: {
+       		'route_id' : route_id,
+        	'override': override,
+        	'date':date
+        },
+        dataType: 'json',
+   	});
+}
+function update_t6_type(T6_id,row){
+	var name = table.rows[3+parseInt(row)+regular_size].cells[0].innerHTML
+    $.ajax({
+    	url: '{% url "update_t6_type" %}',
+        data: {
+       		'T6_id' : T6_id,
+        	'name': name
+        },
+        dataType: 'json',
+   	});
+}
+function update_t6_name(T6_id,row){
+	var name = table.rows[3+parseInt(row)+regular_size].cells[1].innerHTML
+    $.ajax({
+    	url: '{% url "update_t6_name" %}',
+        data: {
+       		'T6_id' : T6_id,
+        	'name': name
+        },
+        dataType: 'json',
+   	});
+}
+function update_t6_override(route_id,row,col,date){
+	var t6_override = table.rows[3+parseInt(row)+regular_size].cells[parseInt(col)].innerHTML
+    $.ajax({
+    	url: '{% url "update_t6_override" %}',
+        data: {
+       		'route_id' : route_id,
+        	't6_override': t6_override,
+        	'date':date
+        },
+        dataType: 'json',
+   	});
+}
+const table = document.getElementById("table");
+const holiday_this_week = parseInt("{{holiday_this_week}}")
+const regular_size = parseInt("{{regular_size}}")
+const list_week_day = [2,3,4,5,6,0,1];
+if(holiday_this_week!=-1)fill_holidays(holiday_this_week);
+disable_zone()
+function fill_holidays(holiday_this_week){
+	var total_rows = table.rows.length - 2;
+	var holiday_this_week = list_week_day[holiday_this_week];
+	for(let x=0;x<total_rows;x++){
+		if(table.rows[x+2].cells[2+holiday_this_week].innerHTML!="NS")table.rows[x+2].cells[2+holiday_this_week].innerHTML = "H";
+		if(table.rows[x+2].cells[2+holiday_this_week].innerHTML=="NS"){
+			if(table.rows[x+2].cells[1+holiday_this_week].innerHTML=="NS")table.rows[x+2].cells[holiday_this_week].innerHTML = "H";
+			else(table.rows[x+2].cells[1+holiday_this_week].innerHTML="H")
+		}
+	}
+	table.rows[regular_size+2].cells[2+holiday_this_week].innerHTML = "";
+}
+
+function employee_add_button(){
+	var url = document.URL
+	window.location = url + "/employee_add";
+}
+function employee_delete_button(){
+	var url = document.URL
+	window.location = url + "/employee_delete";
+}
+function employee_edit_button(){
+	var url = document.URL
+	window.location = url + "/employee_edit";
+}
+function left_button(){
+	var url = document.URL.split("/");
+	var week_num = parseInt(url[url.length - 1]) - 1
+	var zone = url[url.length - 2]
+	window.location = "/schedule/weekly/"+zone+"/"+week_num;
+}
+function right_button(){
+	var url = document.URL.split("/");
+	var week_num = parseInt(url[url.length - 1]) + 1
+	var zone = url[url.length - 2]
+	window.location = "/schedule/weekly/"+zone+"/"+week_num;
+}
+function switch_zone_button(new_zone){
+	var url = document.URL.split("/");
+	var week_num = parseInt(url[url.length - 1])
+	window.location = "/schedule/weekly/"+new_zone+"/"+week_num;	
+}
+function disable_zone(){
+	var url = document.URL.split("/");
+	var zone = url[url.length - 2]
+	if (zone=="20109") document.getElementById("20109").disabled = true;
+	if (zone=="20110") document.getElementById("20110").disabled = true;
+}
+
+</script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatiable" content="IE=edge">
+	<title> United States Postal Sevices </title> 
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+	.blueNav{
+		background-color: #007DC9;
+		color: white;
+	}
+</style>
+<body>
+	<nav class="navbar navbar-expand-md blueNav ">
+		<a class="navbar-brand blueNav" href="/">United States Postal Sevices </a>
+		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
+			<ul class="navbar-nav blueNav">
+				<li class="nav-item blueNav">
+					<a class="nav-link blueNav" href="/">Home</a>
+				</li>                           
+			</ul>
+		</div>  
+	</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html> 
+
